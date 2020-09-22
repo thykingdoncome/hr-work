@@ -1,0 +1,159 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    a {
+        color: $primary-color2;
+        text-decoration: none;
+        outline: none;
+        font-weight: 700;
+    }
+
+    .logo-box {
+        width: 200px;
+    }
+
+    ul.nav-list {
+        display: inline-flex;
+        width: 50%;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+
+            a {
+                padding-bottom: .5rem;
+                transition: .4s;
+
+                &:hover {
+                    border-bottom: 1px solid $primary-color;
+                }
+            }
+        }
+    }
+
+    .toggle {
+        position: absolute;
+        right: 5%;
+        z-index: 3;
+        width: 2rem;
+        height: 34px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .hamburger-wrap {
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 34px;
+        border-radius: 2px;
+        box-shadow:
+            0 0.1px 1.1px -12px rgbaa(0, 0, 0, 0.02),
+            0 0.3px 2.7px -12px rgba(0, 0, 0, 0.028),
+            0 0.6px 5px -12px rgba(0, 0, 0, 0.035),
+            0 1.3px 8.9px -12px rgba(0, 0, 0, 0.042),
+            0 2.5px 16.7px -12px rgba(0, 0, 0, 0.05),
+            0 6px 40px -12px rgba(0, 0, 0, 0.07);
+    }
+
+    .hamburger {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 3px;
+        transition: all 0.4s ease;
+        background: $primary-color2;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            z-index: 1;
+            width: 100%;
+            height: 3px;
+            background: inherit;
+        }
+
+        &::after {
+            top: 6px;
+        }
+    }
+
+    /* Animating hamburger icon */
+    .toggle:checked+.hamburger-wrap>.hamburger {
+        background: white;
+        transform: rotate(135deg);
+    }
+
+    .toggle:checked+.hamburger-wrap>.hamburger:before,
+    .toggle:checked+.hamburger-wrap>.hamburger:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .toggle:checked:hover+.hamburger-wrap>.hamburger {
+        transform: rotate(225deg);
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .main-nav {
+        ul.nav-list {
+            display: none;
+        }
+
+        .hamburger-wrap {
+            display: flex;
+            right: 5%;
+            z-index: 2;
+        }
+
+        .toggle:checked~.nav-list {
+            display: inline-block;
+        }
+
+        .toggle:checked~.hamburger {
+            background: $primary-color2;
+        }
+
+        ul.nav-list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            min-height: 100vh;
+            text-align: center;
+            padding: 3rem 0;
+            display: none;
+            background: $primary-color;
+            width: 100%;
+            z-index: 1;
+
+            li {
+                width: fit-content;
+                padding: 1rem 0;
+                margin: 0 auto;
+                font-size: 1.3rem;
+
+                a {
+                    &:hover {
+                        border-bottom: 2px solid $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,439 @@
+.home-component {
+    .section-wrap {
+        padding: 2rem;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-header {
+        color: $primary-color;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+
+        &.sh-odd {
+            color: $primary-color2;
+        }
+    }
+
+    hr {
+        border: 1px solid $light-pink;
+    }
+
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .package {
+        position: relative;
+        filter: drop-shadow(0px 6px 15px rgba(136, 136, 136, 0.25));
+        border-radius: 10px;
+        background: $primary-color2;
+        box-shadow: 0 6px 10px rgba(136, 136, 136, 0.25);
+        cursor: pointer;
+
+        &:nth-of-type(1) {
+            .package-top {
+
+                span {
+                    background: #0057DA
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            .package-top {
+                span {
+                    background: $primary-color
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            .package-top {
+                span {
+                    background: #00BA34
+                }
+            }
+        }
+
+        .package-top {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 2rem;
+                color: $primary-color2;
+                padding: .5rem 1rem;
+                border-radius: 0 30px 30px 0;
+            }
+
+            img {
+                width: 100%;
+                transition: .5s;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .package-bottom {
+            padding: 2rem 1rem;
+            text-align: center;
+            line-height: 2;
+
+            button {
+                border: 1px solid $secondary-color;
+                padding: .7rem 2rem;
+                margin-top: 1.5rem;
+                border-radius: 30px;
+                width: 70%;
+                background: transparent;
+                cursor: pointer;
+                transition: .3s;
+                font-weight: 800;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+
+    .section-bg-1 {
+        background: #ffffff url('../assets/main_img.png') no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+
+    .section-1 {
+        display: flex;
+        flex-direction: column;
+        color: $primary-color2;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 66.41px);
+
+        .heading {
+            text-align: center;
+            max-width: 50%;
+
+            h1 {
+                padding-top: 4rem;
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .section-2 {
+        .section2-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4rem;
+            margin-top: 3rem;
+            align-items: center;
+            justify-content: center;
+
+            .who-we-are {
+                .wwa-img-small {
+                    display: none;
+                }
+            }
+
+            .company-statement {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 1rem;
+                margin-top: 1rem;
+
+                .mini-box {
+                    background: $light-pink;
+                    padding: 1.5rem;
+                    color: $primary-color;
+
+                    h5 {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .section-3 {
+        .package-wrap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 6rem;
+            align-items: center;
+        }
+    }
+
+    .section-bg-4 {
+        min-height: 90vh;
+        background: url('../assets/why_us.png') no-repeat;
+        ;
+        background-size: cover;
+        background-position: center center;
+        color: $primary-color2;
+        display: flex;
+        align-items: center;
+        margin-top: 3rem;
+    }
+
+    .factor-wrap {
+        display: grid;
+        column-gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .factor-wrap-1 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .factor-wrap-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .factor {
+        background: $primary-color-light;
+        padding: 1rem;
+        border-radius: 4px;
+
+        &.odd-factor {
+            background: $secondary-color-light;
+        }
+    }
+
+    .section-5 {
+        .news-wrap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4rem;
+        }
+    }
+
+    .news {
+        .news-preview {
+            padding: 1rem;
+            background: #F2F2F2;
+             width: 60%;
+             display: flex;
+             flex-direction: column;
+              justify-content: center;
+        }
+    }
+}
+
+
+
+//MOBILE SCREEN
+
+@media only screen and (max-width: 1300px) {
+    .home-component {
+
+        .section-1 {
+
+            .heading {
+                text-align: center;
+                max-width: 60%;
+            }
+        }
+
+        .section-2 {
+            .section2-content {
+                column-gap: 1.5rem;
+
+                .company-statement {
+                    .mini-box {
+                        padding: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 1050px) {
+    .home-component {
+
+        p {
+            font-size: 1rem;
+        }
+
+        .package {
+
+            .package-bottom {
+
+                button {
+                    padding: .7rem;
+                }
+            }
+        }
+
+        .section-1 {
+            min-height: calc(90vh - 66.41px);
+        }
+
+        .section-2 {
+            .section2-content {
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .section-3 {
+            .package-wrap {
+                column-gap: 3rem;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    .home-component {
+
+        .section-1 {
+            min-height: calc(70vh - 66.41px);
+    
+            .heading {
+                text-align: center;
+                max-width: 70%;
+            }
+        }
+
+        .section-2 {
+            .section2-content {
+                display: block;
+
+                .company-statement {
+                    column-gap: 3rem;
+
+                    .mini-box {
+                        padding: 2rem;
+                    }
+                }
+
+                .wwa-img {
+                    display: none;
+                }
+
+                .who-we-are {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 2rem;
+                    align-items: center;
+
+                    .wwa-img-small {
+                        display: block;
+                    }
+                }
+            }
+
+            .btn-primary {
+                margin: 0 auto;
+            }
+        }
+
+        .section-3 {
+            .package-wrap {
+                column-gap: 1.5rem;
+            }
+        }
+
+
+        .section-5 {
+            .news-wrap {
+                column-gap: 1.5rem;
+            }
+
+        }
+        
+        .news {
+            .news-preview {
+                width: 80%;
+            }
+        }
+
+        .factor-wrap {
+            column-gap: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .home-component {
+        .section-3 {
+            .package-wrap {
+                display: block;
+
+                .package {
+                    max-width: 350px;
+                    width: 95%;
+                    margin: 1.5rem auto;
+                }
+            }
+        }
+
+        .factor-wrap {
+           display: block;
+
+           &.mt-2 {
+               margin-top: 0;
+           }
+
+           .factor {
+               margin-top: 1rem;
+           }
+        }
+
+        .section-1 {
+            min-height: calc(50vh - 66.41px);
+    
+            .heading {
+                max-width: 80%;
+    
+                h1 {
+                    padding-top: 2.5rem;
+ 
+                }
+            }
+        }
+
+        .section-2 {
+            .section2-content {
+                .who-we-are {
+                    display: block;
+                    .wwa-img-small {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .section-5 {
+            .news-wrap {
+                display: block;
+            }
+        }
+    }
+
+}
